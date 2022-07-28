@@ -37,7 +37,7 @@
 ### Forkify
 
 - [Project-code](./Projects/Forkify)
-- [Live Demo]()
+- [Live Demo](https://forkify-salah.netlify.app/)
 
 ---
 
@@ -49,4 +49,4 @@
 
 [Course-Link](https://www.udemy.com/course/the-complete-javascript-course/)<br>
 
-![Certificate](https://via.placeholder.com/468x300?text=Certificate+Here)
+![Certificate](https://fcihelwanedu-my.sharepoint.com/:b:/g/personal/salah_20210477_fci_helwan_edu_eg/Ed5PDJ0Vyb9GsIr_5H0fluUBSyYM1NBXTEPm7qlAjtleHA?e=jMOBzY)
