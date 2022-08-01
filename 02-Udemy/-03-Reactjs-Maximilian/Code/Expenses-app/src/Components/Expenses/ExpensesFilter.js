@@ -1,10 +1,7 @@
 import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
-  const selectHandler = (e) => {
-    props.onSelected(e.target.value);
-    console.log(e.target.value);
-  };
+  const selectHandler = (e) => props.onSelected(e.target.value);
 
   return (
     <div className="expenses-filter">
