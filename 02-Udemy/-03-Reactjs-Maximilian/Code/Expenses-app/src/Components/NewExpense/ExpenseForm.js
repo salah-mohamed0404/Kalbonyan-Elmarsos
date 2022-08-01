@@ -38,6 +38,7 @@ function ExpenseForm(props) {
             type="text"
             value={enteredTitle}
             onChange={titleChangeHandler}
+            required
           />
         </div>
 
@@ -49,6 +50,7 @@ function ExpenseForm(props) {
             min="0.01"
             step="0.01"
             onChange={amountChangeHandler}
+            required
           />
         </div>
 
@@ -60,6 +62,7 @@ function ExpenseForm(props) {
             min="2020-01-01"
             max="2032-12-31"
             onChange={dateChangeHandler}
+            required
           />
         </div>
 
