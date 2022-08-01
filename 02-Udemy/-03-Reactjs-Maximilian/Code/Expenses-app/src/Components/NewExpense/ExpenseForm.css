@@ -19,6 +19,13 @@
   border: 1px solid #ccc;
   width: 20rem;
   max-width: 100%;
+
+  outline: none;
+  transition: all 0.3s;
+}
+
+.new-expense__control input:focus {
+  transform: translateY(-5%);
 }
 
 .new-expense__actions {
