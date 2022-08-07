@@ -42,6 +42,8 @@ const BasicForm = props => {
   const formSubmissionHandler = function (e) {
     e.preventDefault();
 
+    if (!formIsValid) return;
+
     resetInputs();
   };
 
