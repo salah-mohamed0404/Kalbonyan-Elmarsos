@@ -1,10 +1,11 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const SimpleInput = props => {
-  const nameInputRef = useRef();
   const [enteredName, setEnteredName] = useState("");
-  const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);
   const [enteredNameTouched, setEnteredNameTouched] = useState(false); // it make much sense if i send data to the server if name is valid so it much better as this
+
+  const enteredNameIsValid = enteredName.trim() !== "";
+  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
 
   const nameInputChangeHandler = function (e) {
     setEnteredName(e.target.value);
@@ -12,10 +13,6 @@ const SimpleInput = props => {
 
   const nameInputBlurHandler = function (e) {
     setEnteredNameTouched(true);
-    if (enteredName.trim() === "") {
-      setEnteredNameIsValid(true);
-      return;
-    }
   };
 
   const formSubmissionHandler = function (e) {
@@ -23,23 +20,16 @@ const SimpleInput = props => {
 
     setEnteredNameTouched(true);
 
-    if (enteredName.trim() === "") {
-      setEnteredNameIsValid(true);
+    if (!enteredNameIsValid) {
       return;
     }
 
-    setEnteredNameIsValid(false);
-
-    // const enteredValue = nameInputRef.current.value;
-    // console.log(enteredValue);
-
     setEnteredName("");
+    setEnteredNameTouched(false);
   };
 
-  const nameInputIsInvalid = enteredNameIsValid && enteredNameTouched;
-
   const nameInputClasses = `form-control ${
-    enteredNameIsValid ? " invalid" : ""
+    nameInputIsInvalid ? " invalid" : ""
   }`;
 
   return (
@@ -47,7 +37,6 @@ const SimpleInput = props => {
       <div className={nameInputClasses}>
         <label htmlFor="name">Your Name</label>
         <input
-          ref={nameInputRef}
           type="text"
           id="name"
           onChange={nameInputChangeHandler}
