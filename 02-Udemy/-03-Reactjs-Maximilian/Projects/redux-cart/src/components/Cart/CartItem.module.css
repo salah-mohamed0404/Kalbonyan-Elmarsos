@@ -1,65 +1,58 @@
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #8a2b06;
-  padding: 1rem 0;
+.item {
   margin: 1rem 0;
+  background-color: #575757;
+  padding: 1rem;
 }
 
-.cart-item h2 {
+.item h3 {
   margin: 0 0 0.5rem 0;
-  color: #363636;
+  font-size: 1.75rem;
 }
 
-.summary {
-  width: 10rem;
+.item header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.details {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.quantity span {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .price {
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #8a2b06;
 }
 
-.amount {
-  font-weight: bold;
-  border: 1px solid #ccc;
-  padding: 0.25rem 0.75rem;
-  border-radius: 6px;
-  color: #363636;
+.itemprice {
+  font-weight: normal;
+  font-size: 1rem;
+  font-style: italic;
 }
 
 .actions {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0.5rem 0;
 }
 
-@media (min-width: 768px) {
-  .actions {
-    flex-direction: row;
-  }
-}
-
-.cart-item button {
-  font: inherit;
-  font-weight: bold;
-  font-size: 1.25rem;
-  color: #8a2b06;
-  border: 1px solid #8a2b06;
-  width: 3rem;
-  text-align: center;
-  border-radius: 6px;
+.actions button {
   background-color: transparent;
-  cursor: pointer;
-  margin-left: 1rem;
-  margin: 0.25rem;
+  border: 1px solid white;
+  margin-left: 0.5rem;
+  padding: 0.15rem 1rem;
+  color: white;
 }
 
-.cart-item button:hover,
-.cart-item button:active {
-  background-color: #8a2b06;
+.actions button:hover,
+.actions button:active {
+  background-color: #4b4b4b;
   color: white;
 }
