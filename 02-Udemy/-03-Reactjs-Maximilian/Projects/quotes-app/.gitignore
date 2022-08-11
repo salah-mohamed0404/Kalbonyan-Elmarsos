@@ -2,3 +2,9 @@ node_modules
 .prettierrc
 package-lock.json
 build
+
+.firebase
+.firebaserc
+firebase.json
+
+
