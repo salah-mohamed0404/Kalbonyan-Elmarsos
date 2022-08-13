@@ -1,11 +1,14 @@
 import { MongoClient } from "mongodb";
 
+// /api/new-meetup
+// POST /api/new-meetup
+
 async function handler(req, res) {
   if (req.method === "POST") {
     const data = req.body;
 
     const client = await MongoClient.connect(
-      "mongodb+srv://salah:01116387902@cluster0.oxvjgiu.mongodb.net/?retryWrites=true&w=majority"
+      "mongodb+srv://salah:zO3Pm1iPXPmHZchm@cluster0.oxvjgiu.mongodb.net/?retryWrites=true&w=majority"
     );
     const db = client.db();
 
