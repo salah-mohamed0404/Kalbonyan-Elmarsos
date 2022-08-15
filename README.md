@@ -56,7 +56,7 @@ Kalbonyan Elmarsos is an Egyptian non-profit organization whose goal is to help 
 
 # MERN Stack
 
-![40%](https://progress-bar.dev/40/?title=Done)
+![70%](https://progress-bar.dev/40/?title=Done)
 <br />
 
 ## JavaScript - Select one of these 2 courses to complete
@@ -67,7 +67,7 @@ Kalbonyan Elmarsos is an Egyptian non-profit organization whose goal is to help 
 
 ## ReactJs - Select one of these 2 courses to complete
 
-- [ ] `in progress` `48h` - 14 - [React - The Complete Guide (incl Hooks, React Router, Redux)](./02-Udemy/-03-Reactjs-Maximilian)
+- [x] `in progress` `48h` - 14 - [React - The Complete Guide (incl Hooks, React Router, Redux)](./02-Udemy/-03-Reactjs-Maximilian)
 <!-- - [ ]  `in progress` `39h` - 14 - [Complete React Developer in 2022 (w/ Redux, Hooks, GraphQL)](/02-Udemy/-03-Reactjs-ZTM) -->
 
 ## NodeJs - Select one of these 2 courses to complete
