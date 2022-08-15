@@ -1,12 +1,14 @@
-import AvailableMeals from "./AvailableMeals";
-import MealsSummary from "./MealsSummary";
+import { Fragment } from 'react';
 
-const Meals = function () {
+import MealsSummary from './MealsSummary';
+import AvailableMeals from './AvailableMeals';
+
+const Meals = () => {
   return (
-    <>
+    <Fragment>
       <MealsSummary />
       <AvailableMeals />
-    </>
+    </Fragment>
   );
 };
 
