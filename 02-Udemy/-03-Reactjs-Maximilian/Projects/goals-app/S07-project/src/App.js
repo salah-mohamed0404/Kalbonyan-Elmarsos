@@ -1,23 +1,48 @@
-import { useState } from "react";
-import AddUser from "./Componants/Users/AddUser";
-import UsersList from "./Componants/Users/UsersList";
+import React, { useState } from 'react';
 
-function App() {
-  const [usersList, setUsersList] = useState([]);
+import CourseGoalList from './components/CourseGoals/CourseGoalList/CourseGoalList';
+import CourseInput from './components/CourseGoals/CourseInput/CourseInput';
+import './App.css';
 
-  const addUserHanler = function (username, userAge) {
-    setUsersList(prevUserList => [
-      ...prevUserList,
-      { name: username, age: userAge, id: Math.random().toString() },
-    ]);
+const App = () => {
+  const [courseGoals, setCourseGoals] = useState([
+    { text: 'Do all exercises!', id: 'g1' },
+    { text: 'Finish the course!', id: 'g2' },
+  ]);
+
+  const addGoalHandler = (enteredText) => {
+    setCourseGoals((prevGoals) => {
+      const updatedGoals = [...prevGoals];
+      updatedGoals.unshift({ text: enteredText, id: Math.random().toString() });
+      return updatedGoals;
+    });
   };
+
+  const deleteItemHandler = (goalId) => {
+    setCourseGoals((prevGoals) => {
+      const updatedGoals = prevGoals.filter((goal) => goal.id !== goalId);
+      return updatedGoals;
+    });
+  };
+
+  let content = (
+    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+  );
+
+  if (courseGoals.length > 0) {
+    content = (
+      <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />
+    );
+  }
 
   return (
     <div>
-      <AddUser onAddUser={addUserHanler} />
-      <UsersList users={usersList} />
+      <section id="goal-form">
+        <CourseInput onAddGoal={addGoalHandler} />
+      </section>
+      <section id="goals">{content}</section>
     </div>
   );
-}
+};
 
 export default App;

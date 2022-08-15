@@ -10,9 +10,7 @@
 
   <br/>
 
-- [Section 3 Project Live Demo]()
-- [Section 4 Project Live Demo]()
-- [Section 5 Project Live Demo]()
+- [Section 3, 4 and 5 Project Live Demo]()
 
 ### goals app (S6-S7)
 
@@ -21,8 +19,7 @@
 
 <br/>
 
-- [Section 6 Project Live Demo]()
-- [Section 7 Project Live Demo]()
+- [Section 6 and 7 Project Live Demo]()
 
 ### Section 8-9 Project
 
@@ -48,6 +45,7 @@
 
 - [Project-code](./Projects/S13-project)
 - [Live Demo]()
+<!-- ############################# -->
 
 ### movies app(S14)
 
@@ -107,16 +105,6 @@
 ### todo-app-TS(S27)
 
 - [Project-code](./Projects/todo-app-TS)
-- [Live Demo]()
-
-### ingredients-app(S28)
-
-- [Project-code](./Projects/ingredients-app/)
-- [Live Demo]()
-
-### Section 29 Project
-
-- [Project-code](./Projects/Section-29/)
 - [Live Demo]()
 
 ---
