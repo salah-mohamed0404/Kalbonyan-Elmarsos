@@ -1,5 +1,12 @@
-const validator = require("validator");
-console.log(validator.isURL("https://mead.io"));
+// Challenge
+
+const chalk = require("chalk");
+
+console.log(chalk.bold.green("Success"));
+
+// const validator = require("validator");
+// console.log(validator.isURL("https://mead.io"));
+
 // Challenge
 /*
 const getNotes = require("./notes.js");
