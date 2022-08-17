@@ -46,8 +46,15 @@ const removeNote = function (title) {
   console.log(chalk.green(`${title}'s note has been removed`));
 };
 
+// Challenge
+const listNotes = function () {
+  console.log(chalk.magentaBright("Your notes"));
+  loadNotes().forEach((note, i) => console.log(`${i + 1} - ${note.title}`));
+};
+
 module.exports = {
   getNotes,
   addNote,
   removeNote,
+  listNotes,
 };
