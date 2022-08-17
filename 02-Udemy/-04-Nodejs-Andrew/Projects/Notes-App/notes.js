@@ -12,8 +12,6 @@ const loadNotes = function () {
 const saveNotes = (notes) =>
   fs.writeFileSync("notes.json", JSON.stringify(notes));
 
-const getNotes = () => "Your Notes.....";
-
 const addNote = function (title, body) {
   const notes = loadNotes();
   const duplicate = notes.find((note) => note.title === title);
@@ -52,9 +50,25 @@ const listNotes = function () {
   loadNotes().forEach((note, i) => console.log(`${i + 1} - ${note.title}`));
 };
 
+// Challenge
+const readNotes = function (title) {
+  const demanNote = loadNotes().find((note) => note.title === title);
+
+  if (!demanNote) {
+    console.log(
+      chalk.redBright(
+        "Error: can't find the note, Try again with the currect title"
+      )
+    );
+    return;
+  }
+
+  console.log(`Title: ${demanNote.title}, body: ${demanNote.body}`);
+};
+
 module.exports = {
-  getNotes,
   addNote,
   removeNote,
   listNotes,
+  readNotes,
 };
