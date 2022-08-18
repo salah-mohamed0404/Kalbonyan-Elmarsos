@@ -1,7 +1,8 @@
 const geocode = require("./utils/geocode");
+const forecast = require("./utils/forecast");
 
-const url =
-  "http://api.weatherstack.com/current?access_key=7db02b1df2ad734bf5df11961b5b4f8c&query=37.8267,-122.4233&units=f";
+// const url =
+// "http://api.weatherstack.com/current?access_key=7db02b1df2ad734bf5df11961b5b4f8c&query=37.8267,-122.4233&units=f";
 
 // request({ url, json: true }, function (error, response) {
 //   if (response?.body?.error) {
@@ -16,23 +17,22 @@ const url =
 //   }
 // });
 
-// Challenge handle errors
-// const geocodeURL =
-//   "http://api.positionstack.com/v1/forward?access_key=1f890ce54fb793f478d3dcda4ed4a85a&query=1600%20Pennsylvania%20Ave%20NW,%20Washington%20DC&output=json&limit=1";
-
-// request({ url: geocodeURL, json: true }, function (error, response) {
-//   if (response?.body?.error) {
-//     console.log("Invalid address");
-//   } else if (!error) {
-//     const lat = response.body.data[0].latitude;
-//     const long = response.body.data[0].longitude;
-//     console.log(lat, long);
-//   } else {
-//     console.log("Can't get the coods");
-//   }
+// geocode("cairo", function (error, data) {
+//   console.log(`Error ${error}`);
+//   console.log(`Data ${data}`);
 // });
 
-geocode("cairo", function (error, data) {
-  console.log(`Error ${error}`);
-  console.log(`Data ${data}`);
+//Challenge
+// Goal: Create a reusable function for getting the forecast
+//
+// 1. Setup the "forecast" function in utils/forecast.js
+// 2. Require the function in app.js and call it as shown below
+// 3. The forecast function should have three potential calls to callback:
+//    - Low level error, pass string for error
+//    - Coordinate error, pass string for error
+//    - Success, pass forecast string for data (same format as from before)
+
+forecast(-25, 45, (error, data) => {
+  console.log("Error", error);
+  console.log("Data", data);
 });
