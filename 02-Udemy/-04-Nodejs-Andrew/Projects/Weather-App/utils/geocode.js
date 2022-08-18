@@ -5,16 +5,16 @@ const geocode = function (address, callback) {
     address
   )}&output=json&limit=1`;
 
-  request({ url, json: true }, function (error, response) {
+  request({ url, json: true }, function (error, { body }) {
     if (error) {
       callback("Can't get the coods");
-    } else if (response.body.data.length === 0) {
+    } else if (body.data.length === 0) {
       callback("Invalid address");
     } else {
       callback(undefined, {
-        lat: response.body.data[0].latitude,
-        long: response.body.data[0].longitude,
-        location: response.body.data[0].name,
+        lat: body.data[0].latitude,
+        long: body.data[0].longitude,
+        location: body.data[0].name,
       });
     }
   });
