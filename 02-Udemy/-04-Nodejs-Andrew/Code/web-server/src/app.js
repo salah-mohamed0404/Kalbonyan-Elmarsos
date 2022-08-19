@@ -21,6 +21,12 @@ app.get("/about", (req, res) =>
   })
 );
 
+app.get("/help", (req, res) =>
+  res.render("help", {
+    helpMessage: "Ask",
+  })
+);
+
 app.get("/weather", (req, res) =>
   res.send({
     forecast: "It's sunny day",
