@@ -6,18 +6,6 @@ const publicDirectoryPath = path.join(__dirname, "../public");
 
 app.use(express.static(publicDirectoryPath));
 
-app.get("/help", (req, res) =>
-  res.send([
-    {
-      name: "Salah",
-      age: 18,
-    },
-  ])
-);
-
-// Challenge to do two more routes
-app.get("/about", (req, res) => res.send("<h1>About page</h1>"));
-
 app.get("/weather", (req, res) =>
   res.send({
     forecast: "It's sunny day",
