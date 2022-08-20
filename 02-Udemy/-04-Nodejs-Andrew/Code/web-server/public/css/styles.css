@@ -40,3 +40,17 @@ header a {
 .portrail {
   width: 250px;
 }
+
+input {
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #888;
+  background-color: #888;
+  color: #fff;
+  padding: 8px;
+}
