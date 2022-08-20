@@ -8,7 +8,7 @@ const geocode = function (address, callback) {
   request({ url, json: true }, function (error, { body }) {
     if (error) {
       callback("Can't get the coods");
-    } else if (!body.data) {
+    } else if (!body.data || body.data.length === 0) {
       callback("Invalid address");
     } else {
       callback(undefined, {
