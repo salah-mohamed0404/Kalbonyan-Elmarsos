@@ -20,7 +20,7 @@ const product = {
 
 const { label: productlabel, stock } = product;
 
-const transaction = function (type, { label, stock }) {
+const transaction = function (type, { label, stock = 0 } = {}) {
   console.log(type, label, stock);
 };
 
