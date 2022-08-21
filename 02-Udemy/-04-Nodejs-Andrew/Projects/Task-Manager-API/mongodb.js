@@ -1,8 +1,11 @@
-const mongodb = require("mongodb");
-const MongoClient = mongodb.MongoClient;
+const { MongoClient, ObjectID } = require("mongodb");
 
 const connectionURL = "mongodb://127.0.0.1:27017";
 const databaseName = "task-manager";
+
+const id = new ObjectID();
+console.log(id);
+console.log(id.getTimestamp());
 
 MongoClient.connect(
   connectionURL,
@@ -41,27 +44,27 @@ MongoClient.connect(
     //   }
     // );
 
-    // Challenge
-    db.collection("tasks").insertMany(
-      [
-        {
-          description: "See the course",
-          completed: true,
-        },
-        {
-          description: "Having fun",
-          completed: false,
-        },
-        {
-          description: "Set with family",
-          completed: true,
-        },
-      ],
-      function (error, result) {
-        if (error) return console.log("Unable to insert user");
+    // // Challenge
+    // db.collection("tasks").insertMany(
+    //   [
+    //     {
+    //       description: "See the course",
+    //       completed: true,
+    //     },
+    //     {
+    //       description: "Having fun",
+    //       completed: false,
+    //     },
+    //     {
+    //       description: "Set with family",
+    //       completed: true,
+    //     },
+    //   ],
+    //   function (error, result) {
+    //     if (error) return console.log("Unable to insert user");
 
-        console.log(result.insertedCount);
-      }
-    );
+    //     console.log(result.insertedCount);
+    //   }
+    // );
   }
 );
