@@ -11,9 +11,17 @@ MongoClient.connect(
 
     const db = client.db(databaseName);
 
-    db.collection("users")
-      .deleteMany({
-        age: 18,
+    // db.collection("users")
+    //   .deleteMany({
+    //     age: 18,
+    //   })
+    //   .then((result) => console.log(result))
+    //   .catch((err) => console.log(err));
+
+    // Challenge
+    db.collection("tasks")
+      .deleteOne({
+        description: "Having fun",
       })
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
