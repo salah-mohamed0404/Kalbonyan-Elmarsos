@@ -21,6 +21,18 @@ const User = mongoose.model("User", {
       if (!validator.isEmail(value)) throw new Error("Email is invalid");
     },
   },
+  // Challenge to make password field
+  password: {
+    type: String,
+    required: true,
+    trim: true,
+    validate(value) {
+      if (value.length <= 6)
+        throw new Error("The password must be more than 6");
+      if (value.toLowerCase().includes("password"))
+        throw new Error('The password mustn\'t contains "password"');
+    },
+  },
   age: {
     type: Number,
     default: 0,
@@ -33,6 +45,7 @@ const User = mongoose.model("User", {
 const me = new User({
   name: "   Salah   ",
   email: "SALAH@MOHAMED.COM",
+  password: 1556456465454,
 });
 
 me.save()
