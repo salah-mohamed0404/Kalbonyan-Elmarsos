@@ -44,4 +44,23 @@ app.post("/tasks", function (req, res) {
     .catch((err) => res.status(400).send(err));
 });
 
+// Challenge
+app.get("/tasks", function (req, res) {
+  Task.find({})
+    .then((tasks) => res.send(tasks))
+    .catch((err) => res.status(400).send(err));
+});
+
+app.get("/tasks/:id", function (req, res) {
+  const { id } = req.params;
+
+  Task.findById(id)
+    .then((task) => {
+      if (!task) return res.status(404).send();
+
+      res.send(task);
+    })
+    .catch((err) => res.status(500).send(err));
+});
+
 app.listen(port, () => console.log(`Server is up on port ${port}`));
