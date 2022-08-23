@@ -97,4 +97,29 @@ app.get("/tasks/:id", async function (req, res) {
   }
 });
 
+// Challenge
+app.patch("/tasks/:id", async function (req, res) {
+  const updates = Object.keys(req.body);
+  const allowedUpdates = ["description", "completed"];
+  const isValidOperation = updates.every((update) =>
+    allowedUpdates.includes(update)
+  );
+
+  if (!isValidOperation)
+    return res.status(404).send({ error: "Invalid update!" });
+
+  try {
+    const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!task) return res.status(404).send();
+
+    res.send(task);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
 app.listen(port, () => console.log(`Server is up on port ${port}`));
