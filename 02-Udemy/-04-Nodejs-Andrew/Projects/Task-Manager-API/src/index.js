@@ -17,6 +17,24 @@ app.post("/users", function (req, res) {
     .catch((err) => res.status(400).send(err));
 });
 
+app.get("/users", function (req, res) {
+  User.find({})
+    .then((users) => res.send(users))
+    .catch((err) => res.status(500).send());
+});
+
+app.get("/users/:id", function (req, res) {
+  const { id } = req.params;
+
+  User.findById(id)
+    .then((user) => {
+      if (!user) return res.status(404).send();
+
+      res.send(user);
+    })
+    .catch((err) => res.status(500).send());
+});
+
 app.post("/tasks", function (req, res) {
   const task = new Task(req.body);
 
