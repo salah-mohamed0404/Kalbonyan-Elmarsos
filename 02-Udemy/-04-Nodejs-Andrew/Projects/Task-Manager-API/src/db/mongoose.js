@@ -42,30 +42,31 @@ const User = mongoose.model("User", {
   },
 });
 
-const me = new User({
-  name: "   Salah   ",
-  email: "SALAH@MOHAMED.COM",
-  password: 1556456465454,
-});
-
-me.save()
-  .then(() => console.log(me))
-  .catch((err) => console.log("Error", err));
-
-// Challenge
-const Task = mongoose.model("Tasks", {
-  description: {
-    type: String,
-  },
-  combleted: Boolean,
-});
-
-// const newTask = new Task({
-//   description: "Play with my brother",
-//   combleted: false,
+// const me = new User({
+//   name: "   Salah   ",
+//   email: "SALAH@MOHAMED.COM",
+//   password: 1556456465454,
 // });
 
-// newTask
-//   .save()
-//   .then(() => console.log(newTask))
-//   .catch((err) => console.log(err));
+// me.save()
+//   .then(() => console.log(me))
+//   .catch((err) => console.log("Error", err));
+
+// Challenge
+const Task = mongoose.model("Task", {
+  description: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  combleted: { type: Boolean, default: false },
+});
+
+const newTask = new Task({
+  description: "    Have fun        ",
+});
+
+newTask
+  .save()
+  .then(() => console.log(newTask))
+  .catch((err) => console.log(err));
