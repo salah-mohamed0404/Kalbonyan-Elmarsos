@@ -15,7 +15,7 @@ form.addEventListener("submit", function (e) {
   const location = search.value;
 
   setMessage(messageParagraph, "Loudind...");
-  fetch(`http://localhost:3000/weather?address=${location}`)
+  fetch(`/weather?address=${location}`)
     .then((res) => res.json())
     .then((data) => {
       if (data.error) return setMessage(messageParagraph, data.error);
