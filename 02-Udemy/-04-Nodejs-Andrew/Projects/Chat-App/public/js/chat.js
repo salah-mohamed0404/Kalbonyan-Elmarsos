@@ -11,6 +11,11 @@ const $messages = document.getElementById("messages");
 const messageTemplete = document.getElementById("message-template").innerHTML;
 const locationTemplete = document.getElementById("location-template").innerHTML;
 
+// Options
+const { username, room } = Qs.parse(location.search, {
+  ignoreQueryPrefix: true,
+});
+
 socket.on("message", (message) => {
   console.log(message);
   const html = Mustache.render(messageTemplete, {
@@ -60,4 +65,11 @@ socket.on("sendLocation", (location) => {
     createdAt: moment(location.createdAt).format("h:mm a"),
   });
   $messages.insertAdjacentHTML("beforeend", html);
+});
+
+socket.emit("join", { username, room }, (error) => {
+  if (error) {
+    alert(error);
+    location.href = "/";
+  }
 });
