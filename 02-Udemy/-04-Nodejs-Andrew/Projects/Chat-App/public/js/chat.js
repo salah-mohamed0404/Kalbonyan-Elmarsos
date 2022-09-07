@@ -6,7 +6,6 @@ const $messageFormInput = $messageForm.querySelector("input");
 const $messageFormBtn = $messageForm.querySelector("button");
 const $locationBtn = document.getElementById("send-location");
 const $messages = document.getElementById("messages");
-const $locationMessages = document.getElementById("location-messages");
 
 // Templetes
 const messageTemplete = document.getElementById("message-template").innerHTML;
@@ -60,5 +59,5 @@ socket.on("sendLocation", (location) => {
     location: location.text,
     createdAt: moment(location.createdAt).format("h:mm a"),
   });
-  $locationMessages.insertAdjacentHTML("beforeend", html);
+  $messages.insertAdjacentHTML("beforeend", html);
 });
