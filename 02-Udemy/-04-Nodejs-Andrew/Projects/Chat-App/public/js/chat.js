@@ -5,8 +5,18 @@ const $messageForm = document.getElementById("message-form");
 const $messageFormInput = $messageForm.querySelector("input");
 const $messageFormBtn = $messageForm.querySelector("button");
 const $locationBtn = document.getElementById("send-location");
+const $messages = document.getElementById("messages");
 
-socket.on("message", (message) => console.log(message));
+// Templetes
+const messageTemplete = document.getElementById("message-template").innerHTML;
+
+socket.on("message", (message) => {
+  console.log(message);
+  const html = Mustache.render(messageTemplete, {
+    message,
+  });
+  $messages.insertAdjacentHTML("beforeend", html);
+});
 
 $messageForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -40,4 +50,8 @@ $locationBtn.addEventListener("click", () => {
       () => console.log("Location shared!")
     );
   });
+});
+
+socket.on("sendLocation", (location) => {
+  console.log(location);
 });
