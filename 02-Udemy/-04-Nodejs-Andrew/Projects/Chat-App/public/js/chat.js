@@ -17,8 +17,8 @@ const { username, room } = Qs.parse(location.search, {
 });
 
 socket.on("message", (message) => {
-  console.log(message);
   const html = Mustache.render(messageTemplete, {
+    username: message.username,
     message: message.text,
     createdAt: moment(message.createdAt).format("h:mm a"),
   });
@@ -61,6 +61,7 @@ $locationBtn.addEventListener("click", () => {
 
 socket.on("sendLocation", (location) => {
   const html = Mustache.render(locationTemplete, {
+    username: location.username,
     location: location.text,
     createdAt: moment(location.createdAt).format("h:mm a"),
   });
