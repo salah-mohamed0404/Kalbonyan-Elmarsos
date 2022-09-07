@@ -6,10 +6,12 @@ const $messageFormInput = $messageForm.querySelector("input");
 const $messageFormBtn = $messageForm.querySelector("button");
 const $locationBtn = document.getElementById("send-location");
 const $messages = document.getElementById("messages");
+const $sidebar = document.getElementById("sidebar");
 
 // Templetes
 const messageTemplete = document.getElementById("message-template").innerHTML;
 const locationTemplete = document.getElementById("location-template").innerHTML;
+const sidebarTemplete = document.getElementById("sidebar-template").innerHTML;
 
 // Options
 const { username, room } = Qs.parse(location.search, {
@@ -23,6 +25,23 @@ socket.on("message", (message) => {
     createdAt: moment(message.createdAt).format("h:mm a"),
   });
   $messages.insertAdjacentHTML("beforeend", html);
+});
+
+socket.on("sendLocation", (location) => {
+  const html = Mustache.render(locationTemplete, {
+    username: location.username,
+    location: location.text,
+    createdAt: moment(location.createdAt).format("h:mm a"),
+  });
+  $messages.insertAdjacentHTML("beforeend", html);
+});
+
+socket.on("roomData", ({ room, users }) => {
+  const html = Mustache.render(sidebarTemplete, {
+    room,
+    users,
+  });
+  $sidebar.innerHTML = html;
 });
 
 $messageForm.addEventListener("submit", (e) => {
@@ -57,15 +76,6 @@ $locationBtn.addEventListener("click", () => {
       () => console.log("Location shared!")
     );
   });
-});
-
-socket.on("sendLocation", (location) => {
-  const html = Mustache.render(locationTemplete, {
-    username: location.username,
-    location: location.text,
-    createdAt: moment(location.createdAt).format("h:mm a"),
-  });
-  $messages.insertAdjacentHTML("beforeend", html);
 });
 
 socket.emit("join", { username, room }, (error) => {
