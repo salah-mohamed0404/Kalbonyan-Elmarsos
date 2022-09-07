@@ -6,9 +6,11 @@ const $messageFormInput = $messageForm.querySelector("input");
 const $messageFormBtn = $messageForm.querySelector("button");
 const $locationBtn = document.getElementById("send-location");
 const $messages = document.getElementById("messages");
+const $locationMessages = document.getElementById("location-messages");
 
 // Templetes
 const messageTemplete = document.getElementById("message-template").innerHTML;
+const locationTemplete = document.getElementById("location-template").innerHTML;
 
 socket.on("message", (message) => {
   console.log(message);
@@ -53,5 +55,8 @@ $locationBtn.addEventListener("click", () => {
 });
 
 socket.on("sendLocation", (location) => {
-  console.log(location);
+  const html = Mustache.render(locationTemplete, {
+    location,
+  });
+  $locationMessages.insertAdjacentHTML("beforeend", html);
 });
