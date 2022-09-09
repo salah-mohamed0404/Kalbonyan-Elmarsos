@@ -79,7 +79,7 @@
 ### Authentication-page(S22)
 
 - [Project-code](./Projects/Authentication-page)
-- [Live Demo](https://auth-page-salah.firebaseapp.com/)
+- [Live Demo](https://auth-page-salah.web.app/)
 
 <!-- ### Meetsup app(S23)
 
