@@ -1,9 +1,14 @@
-# AWS Certified Cloud Practitioner 2020
-## About the course
-- AWS Certifications are the hottest certifications in IT for the third year in a row. This constantly evolving cloud computing platform offers a wide selection of services that can drive innovation, enable scalability, and help your organization maximize its IT spend.
+# AWS Certified Cloud Practitioner (CLF-C01)
 
-- We designed the Certified Cloud Practitioner prep course for non-technical personnel in sales, support, and managerial roles who need to understand AWS at a high level, but don’t need to know each service on a technical level.
+01 — ABOUT THE COURSE
+The cloud has become a key enabler for innovation with beneficial features like high availability, unlimited capacity, on-demand scalability, elasticity, cost savings, and more! Many companies realize the ever-evolving Amazon Web Services (AWS) cloud computing platform offers a wide selection of services that drive innovation, enable scalability, and maximize IT spend.
 
-- Having this certification will help marketing, sales, legal, and finance professionals to better interact with developers and other IT professionals engaged in AWS-related projects. And earning this credential is also a great first step toward the more technical AWS Associate-level certifications.
+If you have little to no experience with AWS, this course is designed to help you obtain the knowledge and skills required to become an AWS Certified Cloud Practitioner. By taking this course, you will gain an understanding of key AWS technologies, their use cases, and the costs and benefits of working with AWS Cloud environments.
 
-- We know that you’re busy, so this course consists of 5-20 minute videos that let you learn at your own pace. Our video lessons keep it simple, making sure you grasp new concepts at the right level before moving on. Together, we’ll walk you through the AWS global infrastructure, each of the major services and their use-cases, security in the cloud, and the AWS pricing & billing models.
+In this course, you'll learn:
+
+The foundations of cloud computing
+The core AWS services, including compute, network, databases, and storage
+Security best practices and compliance in the AWS Cloud
+The cloud costs, economics, and billing practices of the AWS Cloud
+By the end of this course, you'll understand AWS services and how they are leveraged to build applications and provide products and services in the real world. Join your instructor, Kesha Williams, and prepare to become an AWS Certified Cloud Practitioner!
