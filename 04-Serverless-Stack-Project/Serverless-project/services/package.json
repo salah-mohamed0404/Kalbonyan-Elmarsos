@@ -1,0 +1,13 @@
+{
+  "name": "@notes-sst-app/services",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {},
+  "dependencies": {
+    "aws-sdk": "^2.1219.0",
+    "stripe": "^10.10.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.104"
+  }
+}
