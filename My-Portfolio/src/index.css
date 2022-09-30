@@ -1,0 +1,250 @@
+/* 
+
+--- 01 TYPOGRAPHY SYSTEM
+
+  - FONT SIZE SYSTEM (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+  - Font weights: 
+    Default: 400
+    Medium: 500
+    Semi-bold: 600
+    Bold: 700
+
+  - line heights: 
+    defualt: 1
+    Small: 1.05
+    medium: 1.2
+    Paragraph default: 1.5
+    Large: 1.8
+
+  - Letter spacing 
+    -0.5
+    0.75px
+    1px
+
+--- 02 COLORS
+
+  - primary: #212529
+  - Tints: #ced4da
+  - Shades: #000
+  - Accents: 
+  - Grays:
+      #495057
+      #868e96
+      
+      #e9ecef
+      #f8f9fa
+
+--- 05 SHADOWS
+
+  box-shadow: 0 0 4.8rem rgba(0, 0, 0, 0.075);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+
+  box-shadow: 0 0 4.8rem rgba(233, 236, 239, 0.075)
+  box-shadow: 0 0 1rem rgba(233, 236, 239, 0.3)
+
+  For button
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+--- 06 BORDER-RADIUS
+  Default: 3px
+
+--- 07 WHITESPACE 
+
+  - Spaceing system (px)
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+:root {
+  --theme-color: #e9ecef;
+  --main-color: #212529;
+  --main-color-shade: #000;
+  --main-color-tint: #ced4da;
+  --main-gray: #868e96;
+  --main-gray-shade: #495057;
+  --main-gray-tint: #f8f9fa;
+  --main-gradient: linear-gradient(to top left, #212529, #868e96);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--main-color);
+  background-color: var(--theme-color);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--main-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color-tint);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-gray);
+}
+
+/* Reusable classes */
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  padding: 0.8rem;
+}
+
+.btn:link,
+.btn:visited,
+.btn {
+  border: none;
+  background-color: var(--main-color);
+  color: var(--theme-color);
+  padding: 1.6rem;
+  border-radius: 3px;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  transition: all 0.5s;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover,
+.btn_active {
+  background-color: var(--theme-color);
+  color: var(--main-color);
+  transform: translateY(-20%);
+  box-shadow: 0 1rem 3.6rem rgba(0, 0, 0, 0.1);
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: inherit;
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 8rem;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--main-darker-gray);
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+
+section {
+  padding: 9.6rem 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.section--hidden {
+  opacity: 0 !important;
+  transform: translateY(8rem);
+}
+
+.loaded div div:first-child {
+  transform: translateY(-100%);
+  opacity: 0;
+  animation: loaded 0.1s both 3s;
+}
+
+.loaded div div:nth-child(2) {
+  transform: translateY(100%);
+  opacity: 0;
+  animation: loaded 0.1s both 3s;
+}
+
+.loaded div div:last-child,
+.loaded div div:last-child::before,
+.loaded div div:last-child::after {
+  display: none;
+}
+.loaded {
+  animation: loaded 0.1s both 2.8s !important;
+}
+
+@keyframes loaded {
+  to {
+    width: 0;
+    height: 0;
+    border: none;
+    top: -100%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 84em) {
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 40.625em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 31.6em) {
+  html {
+    font-size: 37.5%;
+  }
+}

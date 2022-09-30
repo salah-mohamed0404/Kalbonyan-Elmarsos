@@ -1,0 +1,154 @@
+.about-section {
+  background-color: var(--main-color);
+  color: var(--theme-color);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  gap: 16.5rem;
+
+  color: var(--main-color-tint);
+}
+
+.main h3 {
+  font-size: 3.2rem;
+}
+
+.main h4 {
+  transform: translateY(-100%);
+}
+
+.main p {
+  font-size: 2.8rem;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  margin-bottom: 6.4rem;
+}
+
+.main a {
+  position: relative;
+}
+
+.main a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.8rem;
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--theme-color);
+
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main a:hover::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.main img {
+  max-width: 100%;
+  transition: transform 0.45s ease-in-out;
+}
+
+.main figure:hover img {
+  transform: scale(1.08);
+}
+
+.main figure {
+  width: 120%;
+  position: relative;
+}
+
+/* Bottom */
+.main figure::after {
+  content: "";
+  position: absolute;
+  left: -6%;
+  bottom: -6%;
+  width: 112%;
+  height: 0.5rem;
+  background-color: var(--theme-color);
+
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.1s ease-in-out;
+}
+
+.main figure:hover::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* Left */
+.main figure::before {
+  content: "";
+  position: absolute;
+  left: -6%;
+  bottom: -6%;
+  height: 112%;
+  width: 0.5rem;
+  background-color: var(--theme-color);
+
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.1s ease-in-out 0.1s;
+}
+
+.main figure:hover::before {
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+/* Top */
+.main figure div::before {
+  content: "";
+  position: absolute;
+  left: -6%;
+  top: -6%;
+  width: 112%;
+  height: 0.5rem;
+  background-color: var(--theme-color);
+
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.1s ease-in-out 0.2s;
+}
+
+.main figure:hover div::before {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+/* Right */
+.main figure div::after {
+  content: "";
+  position: absolute;
+  right: -6%;
+  bottom: -6%;
+  height: 112%;
+  width: 0.5rem;
+  background-color: var(--theme-color);
+
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 0.1s ease-in-out 0.3s;
+}
+
+.main figure:hover div::after {
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+@media (max-width: 59em) {
+  .main {
+    flex-direction: column;
+  }
+
+  .main figure {
+    max-width: 70%;
+  }
+}

@@ -1,0 +1,18 @@
+.skillAndCertficates-sectoin {
+  background-color: var(--main-color);
+  color: var(--theme-color);
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 9.6rem;
+  color: var(--main-color-tint);
+}
+
+@media (max-width: 59em) {
+  .main {
+    flex-direction: column;
+  }
+}
